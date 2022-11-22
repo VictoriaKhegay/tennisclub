@@ -1,0 +1,439 @@
+@use "sass:math";
+@function toVw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin align-items-center {
+  @include flex-between();
+  align-items: center;
+}
+
+@mixin flex-bottom-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+$c-purple: #8D86C9;
+$c-bedge: #F7ECE1;
+$transition: .3s;
+
+$tennisWidth: 526px;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  font-size: toVw(14px);
+  font-family: sans-serif;
+}
+
+ul{
+  list-style: none;
+}
+
+.container{
+  width: toVw(1296px);
+  margin: auto;
+}
+
+.container.center{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+header{
+  background-image: url('../img/header-bg-image.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: toVw(30px);
+  color: #fff;
+  position: relative;
+
+  .services{
+    display: flex;
+    gap: toVw(12px);
+
+    .service{
+      background-color: $c-purple;
+      width: 100%;
+      padding: toVw(35px) toVw(35px) toVw(40px) toVw(35px);
+      overflow: hidden;
+      cursor: pointer;
+      
+
+      &:hover{
+        .info{
+          transform: translateY(0);
+        }
+        span{
+          font-size: toVw(18px);
+          text-align: left;
+        }
+      }
+
+      span{
+        display: block;
+        font-size: toVw(50px);
+        margin-bottom: toVw(10px);
+        transition: $transition;
+      }
+
+      .info{
+        display: flex;
+        width: 100%;
+        transform: translateY(100px);
+        transition: $transition;
+        h3{
+          font-size: toVw(24px);
+          padding-right: toVw(15px);
+          
+        }
+        img{
+          height: toVw(20px);
+          width: toVw(20px);
+        
+        }
+      }
+    }
+  }
+
+  .main-title{
+    font-size: toVw(48px);
+    margin-top: toVw(200px);
+  }
+
+  .header-line{
+    margin-top: toVw(30px);
+  }
+
+  .header-top-info{
+    @include flex-between();
+  }
+
+  .logo{
+    img{
+      width: toVw(153px);
+    }
+  }
+
+  .menu{
+    @include align-items-center();
+    gap: toVw(40px);
+    a{
+      color: #fff;
+    }
+  }
+
+  .social-media{
+    @include flex-align-center();
+    img{
+      width: toVw(36px);
+      height: toVw(36px);
+    }
+  }
+}
+
+.features-section{
+  margin-top: toVw(150px);
+}
+
+.features{
+  @include flex-between();
+  gap: toVw(24px);
+  .feature{
+    @include flex-bottom-center();
+    width: 100%;
+    border: 1px solid #F7ECE1;
+    padding: toVw(50px) toVw(50px);
+    height: toVw(500px);
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    font-size: toVw(27px);
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover{
+      h3{
+        margin-bottom: toVw(20px);
+      }
+    }
+
+    h3{
+      margin-bottom: -100%;
+      transition: $transition;
+    }
+
+    &:first-child{
+      background-image: url('../img/girl.jpg');
+      background-size: 85%;
+    }
+
+    &:nth-child(2){
+      background-image: url('../img/ball.jpg');
+      background-size: 85%;
+    }
+
+    &:last-child{
+      background-image: url('../img/balls.jpg');
+      background-size: 85%;
+    }
+  }
+}
+
+.sport-club{
+  margin-top: toVw(100px);
+  .sport-club-wrapper{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .sport-club-info{
+    background-color: $c-bedge;
+    width: toVw(636px);
+    padding-top: toVw(70px);
+    padding-left: toVw(146px);
+    padding-right: toVw(60px);
+    padding-bottom: toVw(84px);
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      width: toVw($tennisWidth);
+      height: toVw(514px);
+      background-image: url('../img/tennis.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      transition: .3s;
+      left: toVw(-($tennisWidth / 1.15));
+      transform: revert;
+    }
+    .sport-list-wrapper{
+      margin-top: toVw(35px);
+      h3{
+        font-size: toVw(21px);
+        margin-bottom: toVw(25px);
+      }
+      nav{
+        ul{
+          li{
+            position: relative;
+            margin-bottom: toVw(30px);
+            &::before{
+              content: '';
+              display: block;
+              width: toVw(8px);
+              height: toVw(8px);
+              left: toVw(-23px);
+              position: absolute;
+              background-color: #8D86C9;
+            }
+          }
+        }
+      }
+    }
+    h2{
+      font-size: toVw(36px);
+      margin-bottom: toVw(25px);
+    }
+  }
+}
+
+.stuff-section{
+  margin-top: toVw(100px);
+  .stuff-wrapper{
+    .stuff-top{
+      @include flex-between();
+      margin-bottom: toVw(40px);
+      h3{
+        font-size: toVw(36px);
+        font-weight: 400;
+        color: #333333;
+      }
+
+      button{
+        border-style: none;
+        width: toVw(45px);
+        height: toVw(45px);
+        background: $c-purple;
+        color: #fff;
+      }
+    }
+    .stuff-slider{
+      display: flex;
+      flex-direction: row;
+      overflow-y: scroll;
+      align-items: stretch;
+
+        .stuff-item{
+          display: block;
+          padding: toVw(27px);
+         }
+        img{
+          width: toVw(196px);
+          height: toVw(240px);
+          border: 1px solid #F7ECE1;
+          padding: 0 toVw(15px);
+          height: toVw(240px);
+          background-size: contain;
+        }
+        h4{
+          padding-top: toVw(25px);
+          padding-bottom: toVw(15px);
+          font-size: toVw(21px);
+          text-align: center;
+          color: #333333;
+        }
+        p{
+          font-size: toVw(14px);
+          text-align: center;
+          color: #333333;
+        }
+      }
+    }
+  }
+.price{
+  margin-top: toVw(150px);
+  margin-bottom: toVw(150px);
+    .container-price{
+    width: toVw(1296px);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .price-wrapper{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    .subscription{
+      display: flex;
+      h2{
+        font-size: toVw(36px);
+        color: #333333;
+        padding-bottom: toVw(75px);
+      }
+    }
+    .services{
+      display: flex;
+      flex-direction: column;
+      .services-title{
+        @include flex-between();
+        margin-bottom: toVw(75px);
+      h3{
+        font-size: toVw(36px);
+        color: #333333;
+      }
+      button{
+        border-style: none;
+        width: toVw(45px);
+        height: toVw(45px);
+        background: $c-purple;
+        color: #fff;
+      }
+  }
+    .slider{
+      @include flex-bottom-center();
+      border: 1px solid #F7ECE1;
+      width: toVw(636px);
+      height: toVw(330px);
+      text-align: left;
+      color: #fff;
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      font-size: toVw(27px);
+      font-style: normal;
+      cursor: pointer;
+      overflow: hidden;
+      background-image: url('../img/cafe.jpg');
+      background-size: 85%;
+        
+      &:hover{
+        h3{
+          margin-bottom: toVw(50px);
+          opacity: $transition;
+        }
+      }
+    }
+  }
+  .sub-container{
+    width: toVw(526px);
+    height: toVw(60px);
+    background-color: $c-purple;
+    margin-bottom: toVw(30px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    p{
+      color: #fff;
+      font-size: toVw(21px);
+      padding-left: 30px;
+    }
+    img{
+      width: toVw(18px);
+      height: toVw(20px);
+      margin-right: 30px;
+    }
+  }
+  }
+  }
+  footer{
+    background-color: #F7ECE1;
+    .container-footer{
+      width: toVw(1296px);
+      height: toVw(96px);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    p{
+      color: #333333;
+      font-size: toVw(14px);
+    }
+    a{
+      color: #333333;
+      font-size: toVw(14px);
+    }   
+    .footer-menu{
+      @include align-items-center();
+      gap: toVw(40px);
+    }
+
+    .social-media-footer{
+      @include flex-align-center();
+      img{
+        width: toVw(36px);
+        height: toVw(36px);
+        margin: toVw(25px);
+      }
+    }
+  }
+}
+    

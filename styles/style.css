@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 0.7291666667vw;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 67.5vw;
+  margin: auto;
+}
+
+.container.center {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header {
+  background-image: url("../img/header-bg-image.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 1.5625vw;
+  color: #fff;
+  position: relative;
+}
+header .services {
+  display: flex;
+  gap: 0.625vw;
+}
+header .services .service {
+  background-color: #8D86C9;
+  width: 100%;
+  padding: 1.8229166667vw 1.8229166667vw 2.0833333333vw 1.8229166667vw;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .services .service:hover .info {
+  transform: translateY(0);
+}
+header .services .service:hover span {
+  font-size: 0.9375vw;
+  text-align: left;
+}
+header .services .service span {
+  display: block;
+  font-size: 2.6041666667vw;
+  margin-bottom: 0.5208333333vw;
+  transition: 0.3s;
+}
+header .services .service .info {
+  display: flex;
+  width: 100%;
+  transform: translateY(100px);
+  transition: 0.3s;
+}
+header .services .service .info h3 {
+  font-size: 1.25vw;
+  padding-right: 0.78125vw;
+}
+header .services .service .info img {
+  height: 1.0416666667vw;
+  width: 1.0416666667vw;
+}
+header .main-title {
+  font-size: 2.5vw;
+  margin-top: 10.4166666667vw;
+}
+header .header-line {
+  margin-top: 1.5625vw;
+}
+header .header-top-info {
+  display: flex;
+  justify-content: space-between;
+}
+header .logo img {
+  width: 7.96875vw;
+}
+header .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.0833333333vw;
+}
+header .menu a {
+  color: #fff;
+}
+header .social-media {
+  display: flex;
+  align-items: center;
+}
+header .social-media img {
+  width: 1.875vw;
+  height: 1.875vw;
+}
+
+.features-section {
+  margin-top: 7.8125vw;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25vw;
+}
+.features .feature {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  border: 1px solid #F7ECE1;
+  padding: 2.6041666667vw 2.6041666667vw;
+  height: 26.0416666667vw;
+  text-align: center;
+  color: #fff;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  font-size: 1.40625vw;
+  cursor: pointer;
+  overflow: hidden;
+}
+.features .feature:hover h3 {
+  margin-bottom: 1.0416666667vw;
+}
+.features .feature h3 {
+  margin-bottom: -100%;
+  transition: 0.3s;
+}
+.features .feature:first-child {
+  background-image: url("../img/girl.jpg");
+  background-size: 85%;
+}
+.features .feature:nth-child(2) {
+  background-image: url("../img/ball.jpg");
+  background-size: 85%;
+}
+.features .feature:last-child {
+  background-image: url("../img/balls.jpg");
+  background-size: 85%;
+}
+
+.sport-club {
+  margin-top: 5.2083333333vw;
+}
+.sport-club .sport-club-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.sport-club .sport-club-info {
+  background-color: #F7ECE1;
+  width: 33.125vw;
+  padding-top: 3.6458333333vw;
+  padding-left: 7.6041666667vw;
+  padding-right: 3.125vw;
+  padding-bottom: 4.375vw;
+  position: relative;
+}
+.sport-club .sport-club-info::before {
+  content: "";
+  display: block;
+  width: 27.3958333333vw;
+  height: 26.7708333333vw;
+  background-image: url("../img/tennis.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  transition: 0.3s;
+  left: -23.8224637681vw;
+  transform: revert;
+}
+.sport-club .sport-club-info .sport-list-wrapper {
+  margin-top: 1.8229166667vw;
+}
+.sport-club .sport-club-info .sport-list-wrapper h3 {
+  font-size: 1.09375vw;
+  margin-bottom: 1.3020833333vw;
+}
+.sport-club .sport-club-info .sport-list-wrapper nav ul li {
+  position: relative;
+  margin-bottom: 1.5625vw;
+}
+.sport-club .sport-club-info .sport-list-wrapper nav ul li::before {
+  content: "";
+  display: block;
+  width: 0.4166666667vw;
+  height: 0.4166666667vw;
+  left: -1.1979166667vw;
+  position: absolute;
+  background-color: #8D86C9;
+}
+.sport-club .sport-club-info h2 {
+  font-size: 1.875vw;
+  margin-bottom: 1.3020833333vw;
+}
+
+.stuff-section {
+  margin-top: 5.2083333333vw;
+}
+.stuff-section .stuff-wrapper .stuff-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.0833333333vw;
+}
+.stuff-section .stuff-wrapper .stuff-top h3 {
+  font-size: 1.875vw;
+  font-weight: 400;
+  color: #333333;
+}
+.stuff-section .stuff-wrapper .stuff-top button {
+  border-style: none;
+  width: 2.34375vw;
+  height: 2.34375vw;
+  background: #8D86C9;
+  color: #fff;
+}
+.stuff-section .stuff-wrapper .stuff-slider {
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  align-items: stretch;
+}
+.stuff-section .stuff-wrapper .stuff-slider .stuff-item {
+  display: block;
+  padding: 1.40625vw;
+}
+.stuff-section .stuff-wrapper .stuff-slider img {
+  width: 10.2083333333vw;
+  height: 12.5vw;
+  border: 1px solid #F7ECE1;
+  padding: 0 0.78125vw;
+  height: 12.5vw;
+  background-size: contain;
+}
+.stuff-section .stuff-wrapper .stuff-slider h4 {
+  padding-top: 1.3020833333vw;
+  padding-bottom: 0.78125vw;
+  font-size: 1.09375vw;
+  text-align: center;
+  color: #333333;
+}
+.stuff-section .stuff-wrapper .stuff-slider p {
+  font-size: 0.7291666667vw;
+  text-align: center;
+  color: #333333;
+}
+
+.price {
+  margin-top: 7.8125vw;
+  margin-bottom: 7.8125vw;
+}
+.price .container-price {
+  width: 67.5vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.price .container-price .price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.price .container-price .subscription {
+  display: flex;
+}
+.price .container-price .subscription h2 {
+  font-size: 1.875vw;
+  color: #333333;
+  padding-bottom: 3.90625vw;
+}
+.price .container-price .services {
+  display: flex;
+  flex-direction: column;
+}
+.price .container-price .services .services-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.90625vw;
+}
+.price .container-price .services .services-title h3 {
+  font-size: 1.875vw;
+  color: #333333;
+}
+.price .container-price .services .services-title button {
+  border-style: none;
+  width: 2.34375vw;
+  height: 2.34375vw;
+  background: #8D86C9;
+  color: #fff;
+}
+.price .container-price .services .slider {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 1px solid #F7ECE1;
+  width: 33.125vw;
+  height: 17.1875vw;
+  text-align: left;
+  color: #fff;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  font-size: 1.40625vw;
+  font-style: normal;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url("../img/cafe.jpg");
+  background-size: 85%;
+}
+.price .container-price .services .slider:hover h3 {
+  margin-bottom: 2.6041666667vw;
+  opacity: 0.3s;
+}
+.price .container-price .sub-container {
+  width: 27.3958333333vw;
+  height: 3.125vw;
+  background-color: #8D86C9;
+  margin-bottom: 1.5625vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.price .container-price .sub-container p {
+  color: #fff;
+  font-size: 1.09375vw;
+  padding-left: 30px;
+}
+.price .container-price .sub-container img {
+  width: 0.9375vw;
+  height: 1.0416666667vw;
+  margin-right: 30px;
+}
+
+footer {
+  background-color: #F7ECE1;
+}
+footer .container-footer {
+  width: 67.5vw;
+  height: 5vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container-footer p {
+  color: #333333;
+  font-size: 0.7291666667vw;
+}
+footer .container-footer a {
+  color: #333333;
+  font-size: 0.7291666667vw;
+}
+footer .container-footer .footer-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.0833333333vw;
+}
+footer .container-footer .social-media-footer {
+  display: flex;
+  align-items: center;
+}
+footer .container-footer .social-media-footer img {
+  width: 1.875vw;
+  height: 1.875vw;
+  margin: 1.3020833333vw;
+}/*# sourceMappingURL=style.css.map */
